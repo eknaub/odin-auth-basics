@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log In</title>
+    <title>Join the Club</title>
     <link rel="stylesheet" href="/styles.css" />
     <style>
       body {
@@ -45,16 +45,6 @@
         margin-bottom: 1.5rem;
       }
 
-      .error {
-        color: #d32f2f;
-        background: #ffebee;
-        padding: 0.75rem;
-        border: 1px solid #d32f2f;
-        border-radius: 8px;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-
       form {
         display: flex;
         flex-direction: column;
@@ -63,7 +53,7 @@
 
       label {
         font-weight: bold;
-        margin-bottom: 1rem;
+        margin-bottom: 0.25rem;
       }
 
       input {
@@ -72,7 +62,6 @@
         border-radius: 8px;
         font-size: 1rem;
         transition: border-color 0.3s;
-        width: 100%;
       }
 
       input:focus {
@@ -109,38 +98,40 @@
       p a:hover {
         text-decoration: underline;
       }
+
+      .error {
+        color: #d32f2f;
+        background: #ffebee;
+        padding: 0.75rem;
+        border: 1px solid #d32f2f;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-weight: bold;
+        animation: shake 0.3s ease-in-out;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Log In</h1>
+      <h1>Join the Club</h1>
       <% if (error) { %>
       <div class="error"><%= error %></div>
       <% } %>
-      <form action="/log-in" method="POST">
+      <form action="/user/join-the-club" method="POST">
         <div>
-          <label for="email">Email</label>
+          <label for="membership_code">Membership Code:</label>
           <input
             type="text"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
+            id="membership_code"
+            name="membership_code"
+            placeholder="Enter your membership code"
             required
           />
         </div>
-        <div>
-          <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            required
-          />
-        </div>
-        <button type="submit">Log In</button>
+        <button type="submit">Join</button>
       </form>
-      <p>Don't have an account? <a href="/sign-up">Sign up here</a>.</p>
+      <p><a href="/dashboard">Back to Home</a></p>
     </div>
   </body>
 </html>

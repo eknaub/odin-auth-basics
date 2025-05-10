@@ -4,6 +4,7 @@ const session = require("express-session");
 const passport = require("passport");
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/authRoutes");
+const messageRoutes = require("./routes/messageRoutes");
 const userRoutes = require("./routes/userRoutes");
 const passportConfig = require("./config/passportConfig");
 
@@ -26,7 +27,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", authRoutes);
-app.use("/users", userRoutes);
+app.use("/dashboard", messageRoutes);
+app.use("/user", userRoutes);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`App listening on port ${process.env.PORT || 3000}!`);
