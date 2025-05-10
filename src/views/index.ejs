@@ -2,91 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Log In</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f9;
-        color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-      .container {
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        width: 300px;
-      }
-      h1 {
-        color: #444;
-      }
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      label {
-        font-size: 14px;
-        text-align: left;
-      }
-      input {
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 14px;
-      }
-      button {
-        padding: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 14px;
-      }
-      button:hover {
-        background-color: #0056b3;
-      }
-      a {
-        text-decoration: none;
-      }
-      .signup-link {
-        margin-top: 10px;
-        display: inline-block;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="container">
-      <% if (locals.user) { %>
-      <h1>WELCOME BACK <%= user.username %></h1>
-      <a href="/log-out">
-        <button type="button">LOG OUT</button>
-      </a>
-      <% } else { %>
-      <h1>Please Log In</h1>
-      <form action="/log-in" method="POST">
-        <label for="username">Username</label>
-        <input
-          id="username"
-          name="username"
-          placeholder="username"
-          type="text"
-        />
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" />
-        <button type="submit">Log In</button>
-      </form>
-      <p>Don't have an account?</p>
-      <a href="/sign-up" class="signup-link">
-        <button type="button">Sign Up</button>
-      </a>
-      <% } %>
-    </div>
+    <header>
+      <h1>Welcome to the Node.js Application</h1>
+      <p><a href="/log-in">Log in</a> or <a href="/sign-up">Sign up</a></p>
+    </header>
+    <main>
+      <h2>About This Application</h2>
+      <p>
+        This is a simple Node.js application demonstrating user authentication.
+      </p>
+    </main>
+    <footer>
+      <p>&copy; 2023 Node.js Application</p>
+    </footer>
   </body>
 </html>

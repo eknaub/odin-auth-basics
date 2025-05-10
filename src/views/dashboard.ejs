@@ -1,0 +1,23 @@
+<!-- filepath: c:\DevTools\odin-auth-basics\src\views\dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome, <%= user.username %>!</h1>
+      <a href="/log-out">Log out</a>
+    </header>
+    <main>
+      <h2>Your Dashboard</h2>
+      <p>Here is your personalized content.</p>
+    </main>
+    <footer>
+      <p>&copy; 2025 Node.js Application</p>
+    </footer>
+  </body>
+</html>
